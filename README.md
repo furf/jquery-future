@@ -21,6 +21,7 @@ jQuery(function ($) {
   
 });
 ```
+Demo: http://furf.com/exp/future/examples/
 
 Why would you want to do this? Only future time travelers can tell.
 
