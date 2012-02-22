@@ -1,5 +1,7 @@
 /*!
  * jQuery.future
+ * Copyright 2011, David Furfero, @furf
+ * Dual licensed under the MIT or GPL Version 2 licenses.
  */
 !function ($, future, fn, name, method) {
 
