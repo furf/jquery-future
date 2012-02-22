@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="js/prettify/prettify.css">
+  <style type="text/css" media="screen">
+  body {
+    font:24px/1.25 helvetica,arial,sans-serif;
+  }
+  script.prettyprint {
+    display:block;
+    font-family:courier,monospaced;
+    font-size:18px;
+    white-space:pre;
+    border:1px dashed #ccc;
+    margin:1em 0;
+    padding:1em;
+    background:#eee;
+    overflow:auto;
+  }
+  #content {
+    background:#eee;
+    border:1px solid #ccc;
+    height:2em;
+    line-height:2em;
+    text-align:center;
+  }
+  .future {
+    font-style:italic;
+  }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <header>
+    <h1>jQuery.future</h1>
+    <h2>Like a time machine for jQuery</h2>
+  </header>
+  <div id="main" role="main">
+    <div id="content"></div>
+  </div>
+  <footer>
+  </footer>
+</div>
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="../jquery.future.js"></script>
+<script class="prettyprint lang-js">
+jQuery(function ($) {
+
+  var elem = $.Deferred();
+    
+  $.future(elem)
+    .text('hello, world!')
+    .css('color', 'green')
+    .hide()
+    .appendTo('#content')
+    .fadeIn(3000)
+    .text('goodbye, world!')
+    .css('color', 'red')
+    .fadeOut(3000);
+    
+  setTimeout(function () {
+    elem.resolve('<div class="future"/>');
+  }, 1500);
+  
+});
+</script>
+<script src="js/prettify/prettify.js"></script>
+<script>jQuery(prettyPrint);</script>
+</body>
+</html>
